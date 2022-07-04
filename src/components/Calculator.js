@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Calculator extends Component {
   constructor(props) {
@@ -28,10 +28,9 @@ class Calculator extends Component {
       ],
     };
   }
+
   render() {
-    return this.state.interface.map((value, i) => (
-      <div className={`item${i}`}>{value}</div>
-    ));
+    return this.state.interface.map((value, i) => <div className={`item${i}`} key={i}>{value}</div>);
   }
 }
 
