@@ -1,27 +1,32 @@
-body {
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.calculator {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin: 30px 10%;
 }
 
-code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+.calculator > * {
+  background-color: rgba(217, 213, 213, 0.8);
+  text-align: center;
+  font-size: 40px;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid gray;
+}
+
+.item0 {
+  grid-column: 1 / 5;
+  text-align: right;
+  background-color: rgb(144, 141, 141);
+  padding: 15px;
+}
+.item17 {
+  grid-column: 1 / 3;
+}
+
+.item4,
+.item8,
+.item12,
+.item16,
+.item19 {
+  background-color: rgb(221, 101, 40);
 }
