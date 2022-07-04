@@ -29,15 +29,9 @@ class Calculator extends Component {
     };
   }
   render() {
-    return this.state.interface.map((p, i) => (
-      <Item value={p} style={`item${i}`} />
+    return this.state.interface.map((value, i) => (
+      <div className={`item${i}`}>{value}</div>
     ));
-  }
-}
-
-class Item extends Component {
-  render() {
-    return <div className={this.props.style}>{this.props.value}</div>;
   }
 }
 
