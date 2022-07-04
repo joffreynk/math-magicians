@@ -8,8 +8,9 @@ class App extends Component {
   }
 
   render() {
+    const calculator = 'calculator';
     return (
-      <div className={'calculator'}>
+      <div className={calculator}>
         <Calculator />
       </div>
     );

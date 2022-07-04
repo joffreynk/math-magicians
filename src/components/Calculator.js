@@ -31,7 +31,7 @@ class Calculator extends Component {
 
   render() {
     const { data } = this.state;
-    return data.map((value, i) => <div className={`item${i}`} key={`item${i}`}>{value}</div>);
+    return data.map((value, i) => <div className={`item${i}`} key={`item${i+1}`}>{value}</div>);
   }
 }
 
