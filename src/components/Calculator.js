@@ -4,7 +4,7 @@ class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      interface: [
+      data: [
         0,
         'AC',
         '+/-',
@@ -30,7 +30,8 @@ class Calculator extends Component {
   }
 
   render() {
-    return this.state.interface.map((value, i) => <div className={`item${i}`} key={i}>{value}</div>);
+    const { data } = this.state;
+    return data.map((value, i) => <div className={`item${i}`} key={`item${i}`}>{value}</div>);
   }
 }
 

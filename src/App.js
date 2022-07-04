@@ -9,7 +9,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className='calculator'>
+      <div className={'calculator'}>
         <Calculator />
       </div>
     );
