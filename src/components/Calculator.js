@@ -31,14 +31,18 @@ class Calculator extends Component {
 
   render() {
     const { data } = this.state;
+    const { total, handler } = this.props;
+    const mytype = 'button'
     return data.map((value, i) => {
-      if(i === 0){
-        return <input type='button' readOnly className={`item${i}`} key={`item${i + 1}`} value={this.props.total} />
+      if (i === 0) {
+        return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total} />;
       }
 
-      return <input type='button' onClick={this.props.handler} className={`item${i}`} key={`item${i + 1}`} value={value} />
+      return <input type={mytype} onClick={handler} className={`item${i}`} key={`item${i + 1}`} value={value} />;
     });
   }
 }
+
+
 
 export default Calculator;
