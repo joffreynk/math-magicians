@@ -15,11 +15,11 @@ class App extends Component {
     const { calcV } = this.state;
     const calc = calculate(calcV, e.target.value);
     const { total, next } = calc;
-    let res = '0'
+    let res = '0';
     if (next) {
-      res = next
-    } else if (total ) {
-      res = total
+      res = next;
+    } else if (total) {
+      res = total;
     }
 
     this.setState({ calcV: calc, res });
