@@ -36,7 +36,7 @@ class Calculator extends Component {
     const mytype = 'button';
     return data.map((value, i) => {
       if (i === 0) {
-        return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total ? total : 0} />;
+        return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total} />;
       }
 
       return <input type={mytype} onClick={handler} className={`item${i}`} key={`item${i + 1}`} value={value} />;

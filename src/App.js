@@ -14,11 +14,17 @@ class App extends Component {
   }
 
   render() {
+    if (!this.state.total) {
+      this.setState((prevState) => this.setState({...prevState, total : 0}))
+    }
     const calculator = 'calculator';
     const { total } = this.state;
     return (
       <div className={calculator}>
-        <Calculator handler={this.handler} total={total} />;
+        <Calculator
+        handler={this.handler}
+        total={total}
+        />;
       </div>
     );
   }
