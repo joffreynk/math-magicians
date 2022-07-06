@@ -12,13 +12,17 @@ class App extends Component {
   }
 
   handler = (e) => {
-    const { calcV } = this.state
+    const { calcV } = this.state;
     const calc = calculate(calcV, e.target.value);
     const { total, next } = calc;
-    const result = next ? next : total;
-    const res = result ? result : '0';
+    let res = '0'
+    if (next) {
+      res = next
+    } else if (total ) {
+      res = total
+    }
 
-    this.setState({calcV: calc, res });
+    this.setState({ calcV: calc, res });
   }
 
   render() {
