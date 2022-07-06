@@ -25,7 +25,8 @@ const App = () => {
   const { res } = data;
   return (
     <div className={calculator}>
-      <Calculator handler={handler} total={res} />;
+      <Calculator handler={handler} total={res} />
+      ;
     </div>
   );
 };
