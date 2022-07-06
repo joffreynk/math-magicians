@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types'
 
 class Calculator extends Component {
   constructor(props) {
@@ -43,6 +44,9 @@ class Calculator extends Component {
   }
 }
 
-
+Calculator.propTypes = {
+  total: propTypes.number,
+  handler: propTypes.func.isRequired,
+};
 
 export default Calculator;

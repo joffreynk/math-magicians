@@ -10,14 +10,15 @@ class App extends Component {
 
   handler = (e) => {
     const calc = calculate(this.state, e.target.value);
-    this.setState(calc)
+    this.setState(calc);
   }
 
   render() {
     const calculator = 'calculator';
+    const { total } = this.state;
     return (
       <div className={calculator}>
-        <Calculator handler={this.handler} total={this.state.total?this.state.total:0} />
+        <Calculator handler={this.handler} total={total ? total : 0} />;
       </div>
     );
   }
