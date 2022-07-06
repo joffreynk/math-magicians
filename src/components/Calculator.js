@@ -46,7 +46,7 @@ class Calculator extends Component {
 
 Calculator.defaultProps = {
   total: 0,
-}
+};
 
 Calculator.propTypes = {
   total: propTypes.number,

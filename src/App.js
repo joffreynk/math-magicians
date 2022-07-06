@@ -18,7 +18,7 @@ class App extends Component {
     const { total } = this.state;
     return (
       <div className={calculator}>
-        <Calculator handler={this.handler}total={total} />
+        <Calculator handler={this.handler} total={total} />
         ;
       </div>
     );
