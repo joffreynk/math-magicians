@@ -5,19 +5,25 @@ import calculate from './components/logic/calculate';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      calcV: {},
+      res: '0',
+    };
   }
 
   handler = (e) => {
-    const calc = calculate(this.state, e.target.value);
-    this.setState(calc);
+    const { calcV } = this.state
+    const calc = calculate(calcV, e.target.value);
+    const { total, next } = calc;
+    const result = next ? next : total;
+    const res = result ? result : '0';
+
+    this.setState({calcV: calc, res });
   }
 
   render() {
     const calculator = 'calculator';
-    const { total, next } = this.state;
-    const result = next ? next : total;
-    const res = result ? result : '0';
+    const { res } = this.state;
 
     return (
       <div className={calculator}>
