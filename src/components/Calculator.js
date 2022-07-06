@@ -34,6 +34,7 @@ class Calculator extends Component {
     const { data } = this.state;
     const { total, handler } = this.props;
     const mytype = 'button';
+
     return data.map((value, i) => {
       if (i === 0) {
         return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total} />;
@@ -44,12 +45,8 @@ class Calculator extends Component {
   }
 }
 
-Calculator.defaultProps = {
-  total: 0,
-};
-
 Calculator.propTypes = {
-  total: propTypes.number,
+  total: propTypes.string.isRequired,
   handler: propTypes.func.isRequired,
 };
 

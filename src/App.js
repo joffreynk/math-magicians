@@ -15,10 +15,13 @@ class App extends Component {
 
   render() {
     const calculator = 'calculator';
-    const { total } = this.state;
+    const { total, next } = this.state;
+    const result = next ? next : total;
+    const res = result ? result : '0';
+
     return (
       <div className={calculator}>
-        <Calculator handler={this.handler} total={total} />
+        <Calculator handler={this.handler} total={res} />
         ;
       </div>
     );
