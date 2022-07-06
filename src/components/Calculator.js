@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import propTypes from 'prop-types'
+import propTypes from 'prop-types';
 
 class Calculator extends Component {
   constructor(props) {
@@ -33,10 +33,10 @@ class Calculator extends Component {
   render() {
     const { data } = this.state;
     const { total, handler } = this.props;
-    const mytype = 'button'
+    const mytype = 'button';
     return data.map((value, i) => {
       if (i === 0) {
-        return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total} />;
+        return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total ? total : 0} />;
       }
 
       return <input type={mytype} onClick={handler} className={`item${i}`} key={`item${i + 1}`} value={value} />;
@@ -45,7 +45,7 @@ class Calculator extends Component {
 }
 
 Calculator.propTypes = {
-  total: propTypes.number,
+  total: propTypes.number.isRequired,
   handler: propTypes.func.isRequired,
 };
 
