@@ -1,49 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import propTypes from 'prop-types';
 
-class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [
-        '0.00',
-        'AC',
-        '+/-',
-        '%',
-        '÷',
-        7,
-        8,
-        9,
-        'x',
-        4,
-        5,
-        6,
-        '-',
-        1,
-        2,
-        3,
-        '+',
-        0,
-        '.',
-        '=',
-      ],
-    };
-  }
+const Calculator = (props) => {
+  const data = [
+    '0.00',
+    'AC',
+    '+/-',
+    '%',
+    '÷',
+    7,
+    8,
+    9,
+    'x',
+    4,
+    5,
+    6,
+    '-',
+    1,
+    2,
+    3,
+    '+',
+    0,
+    '.',
+    '=',
+  ];
 
-  render() {
-    const { data } = this.state;
-    const { total, handler } = this.props;
-    const mytype = 'button';
+  const { total, handler } = props;
+  const mytype = 'button';
 
-    return data.map((value, i) => {
-      if (i === 0) {
-        return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total} />;
-      }
-
-      return <input type={mytype} onClick={handler} className={`item${i}`} key={`item${i + 1}`} value={value} />;
-    });
-  }
-}
+  return data.map((value, i) => {
+    if (i === 0) {
+      return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total} />;
+    }
+    return <input type={mytype} onClick={handler} className={`item${i}`} key={`item${i + 1}`} value={value} />;
+  });
+};
 
 Calculator.propTypes = {
   total: propTypes.string.isRequired,
