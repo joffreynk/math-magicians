@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Calculator from './components/Calculator';
 import calculate from './components/logic/calculate';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      calcV: {},
-      res: '0',
-    };
-  }
+const App = () => {
+  const [data, setData] = useState({
+    calcV: {},
+    res: '0',
+  });
 
-  handler = (e) => {
-    const { calcV } = this.state;
+  const handler = (e) => {
+    const { calcV } = data;
     const calc = calculate(calcV, e.target.value);
     const { total, next } = calc;
     let res = '0';
@@ -22,20 +19,15 @@ class App extends Component {
       res = total;
     }
 
-    this.setState({ calcV: calc, res });
-  }
-
-  render() {
-    const calculator = 'calculator';
-    const { res } = this.state;
-
-    return (
-      <div className={calculator}>
-        <Calculator handler={this.handler} total={res} />
-        ;
-      </div>
-    );
-  }
-}
+    setData({ calcV: calc, res });
+  };
+  const calculator = 'calculator';
+  const { res } = data;
+  return (
+    <div className={calculator}>
+      <Calculator handler={handler} total={res} />;
+    </div>
+  );
+};
 
 export default App;

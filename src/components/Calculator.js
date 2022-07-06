@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import propTypes from 'prop-types';
 
-class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: [
+const Calculator = (props) => {
+      const data = [
         '0.00',
         'AC',
         '+/-',
@@ -26,23 +23,17 @@ class Calculator extends Component {
         0,
         '.',
         '=',
-      ],
-    };
-  }
+      ];
 
-  render() {
-    const { data } = this.state;
-    const { total, handler } = this.props;
+    const { total, handler } = props;
     const mytype = 'button';
 
     return data.map((value, i) => {
       if (i === 0) {
         return <input type={mytype} readOnly className={`item${i}`} key={`item${i + 1}`} value={total} />;
       }
-
       return <input type={mytype} onClick={handler} className={`item${i}`} key={`item${i + 1}`} value={value} />;
     });
-  }
 }
 
 Calculator.propTypes = {
