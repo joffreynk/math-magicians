@@ -44,8 +44,12 @@ class Calculator extends Component {
   }
 }
 
+Calculator.defaultProps = {
+  total: 0,
+}
+
 Calculator.propTypes = {
-  total: propTypes.number.isRequired,
+  total: propTypes.number,
   handler: propTypes.func.isRequired,
 };
 
