@@ -1,7 +1,12 @@
+
+.App {
+  margin: 25px 5%;
+}
+
 .calculator {
   display: grid;
   grid-template-columns: auto auto auto auto;
-  margin: 30px 10%;
+  width: 70%;
 }
 
 .calculator > * {
@@ -12,14 +17,18 @@
   font-weight: bold;
   border: 1px solid gray;
   cursor: pointer;
+  text-shadow: 2px 4px #0864ba;
+  color: aqua;
 }
 
 .item0 {
   grid-column: 1 / 5;
   text-align: right;
-  background-color: rgb(144, 141, 141);
+  background-color: rgb(31, 100, 63);
   padding: 15px;
   cursor: move;
+  box-shadow: 1px 3px #d6a0a0;
+  color: cadetblue;
 }
 
 .item17 {
@@ -31,5 +40,63 @@
 .item12,
 .item16,
 .item19 {
-  background-color: rgb(221, 101, 40);
+  background-color: rgb(158, 98, 55);
+  text-shadow: 1px 2px #d6a0a0;
+  color: darkgoldenrod;
+  font-size: 50px;
+}
+
+.main-cal {
+  display: flex;
+  gap: 40px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 18px;
+  border: 1px solid gray;
+  padding: 8px 14px;
+  border-radius: 5px;
+  background-color: gray;
+  transition: background 0.6s, color 0.6s;
+  color: #fff;
+  font-weight: bold;
+}
+
+a:hover {
+  background: lightgrey;
+  color: rgb(84, 41, 114);
+}
+
+h1 {
+  color: blue;
+  text-shadow: 3px 4px lightblue;
+  font-size: 60px;
+}
+
+h2 {
+  color: #081d31;
+  text-shadow: 2px 2px rgb(217, 221, 222);
+  font-size: 35px;
+}
+
+p {
+  font-size: 17px;
+  color: rgb(38, 31, 31);
+  font-style: italic;
+}
+
+.home,
+.quotes {
+  margin: auto 15%;
+}
+
+.item:active {
+  font-size: 50px;
 }
