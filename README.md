@@ -7,6 +7,10 @@
 - Make simple calculations.
 - Read a random math-related quote.
 
+## see it live
+
+[live](https://math-magicians-by-joffrey.netlify.app/)
+
 
 ## Built With
 
